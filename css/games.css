@@ -1,0 +1,110 @@
+#autoItemContainer {
+    padding: 2rem 0;
+}
+
+
+/* table with game results */
+table.gameResults {
+    border-collapse: collapse;
+    font-size: 2rem;
+}
+
+table.gameResults tr td {
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* shulte table */
+table.shulteTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+}
+td.shuTd {
+    padding: 0 0.3em;
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* autoitems */
+
+textarea#userAnswer {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* hide spinbox in column input */
+input.digitAns::-webkit-outer-spin-button,
+input.digitAns::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input.digitAns {
+    -moz-appearance:textfield;  /* Firefox */
+}
+
+img.memoImgItem {
+    border: 1px solid gray;
+}
+
+div.colorCard {
+    border: 1px solid black;
+    display: inline-block;
+    width: 90%;
+    height: 90%;
+    min-height: 200px;
+}
+
+table.colorMatchTable, table.wordsMatchTable {
+    width: 100%;
+}
+
+table.colorMatchTable tr td {
+    min-height: 2rem;
+}
+
+div.memoTable {
+    text-align: left;
+}
+div.reviewTableEl {
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+}
+div.memoTableElement {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+}
+/* with one word displayed in it during memo*/
+span.wordMemo {
+    font-size: 8vw;
+}
+
+/* in results layout, if result is 100% (like 50/50 digits), the label "50/50" has this style */
+span.allCorrectResult {
+    font-weight: bold;
+}
+
+/* images memo */
+.memoImgPreview img {
+    width: 50px;
+    height: 50px;
+}
+
+/* effects with keyframes */
+@keyframes highlightRed {
+    0%   { background: #f00; }
+    100% { background: none; }
+}
+@keyframes highlightGreen {
+    0%   { background: #0f0; }
+    100% { background: none; }
+}
+.highlightRed   { animation: highlightRed 1s; }
+.highlightGreen { animation: highlightGreen 1s; }

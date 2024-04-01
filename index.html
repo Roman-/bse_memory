@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Free online memory sports competitions simulator. Numbers, Binary digits, Spoken numbers, Words, Colors" />
+    <meta name="keywords" content="memory sports simulator, mnemonics, memory trainer" />
+    <meta name="author" content="Roman Strakhov">
+    <meta name="theme-color" content="#eee" id='metaBarColor'>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="img/icons/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="js/3rd_party/bootstrap.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="css/fa.min.css">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/3rd_party/jquery-3.3.1.min.js" ></script>
+    <script src="js/3rd_party/popper.min.js"></script>
+    <script src="js/3rd_party/bootstrap.min.js"></script>
+
+    <!-- 3rd party js -->
+    <script src='js/bootstrap-input-spinner.js'> </script>
+    <script src='js/darkreader.js'> </script>
+    <script src='js/tinycolor.js'> </script>
+    <!-- game scripts and styles -->
+    <link rel="stylesheet" type="text/css" href="css/main.css?v41">
+    <link rel="stylesheet" type="text/css" href="css/games.css?v41">
+    <script src='js/global.js?v41'> </script>
+    <script src='js/init.js?v41'> </script>
+    <script src='js/helpers.js?v41'> </script>
+    <script src='js/layouts.js?v41'> </script>
+    <script src='js/saveload.js?v41'> </script>
+    <script src='js/i18n.js?v41'> </script>
+
+    <script src='js/memo.js?v41'> </script>
+    <script src='js/pbtracker.js?v41'> </script>
+    <script src='js/mnemonic.js?v41'> </script>
+    <script src='js/wordsengine.js?v41'> </script>
+    <script src='js/setuplayout.js?v41'> </script>
+    <script src='js/mnemobrowser.js?v41'> </script>
+    <script src='js/game.js?v41'> </script>
+    <title>BSE memory</title>
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand clickable" id='navBarBrand' onclick="loMain()">
+    <img src="img/icons/icon-150x150.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <span id='barTitle'>Loading...</span>
+  </a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    </ul>
+  </div>
+</nav>
+
+<div id="mainLayWrap">
+    <div id='mainLayout' class='centered align-middle'>
+    </div>
+</div>
+
+</body>
+</html>
