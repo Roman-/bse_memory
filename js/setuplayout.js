@@ -256,7 +256,7 @@ SetupLay.getSetupFields = function(setup) {
     case 'numbers':
     case 'binary':
         return [
-            Fields.numItems(setup, tr('Digits amount'), tr('How many digits to memorize')),
+            Fields.numItems(setup, tr('Digits amount'), tr('How many digits to memorize'), 1, 5000),
             Fields.groupBy(setup, tr('Group by'), tr('Digits in a number'), true),
             Fields.timeLimit(setup),
             Fields.concentrationTime(setup),
