@@ -230,12 +230,19 @@ Fields.voice = function (setup) {
 Fields.dictionary = function (setup) {
     jqSelectDict = function () {
         let select = $("<select id='dictionary'></select>").addClass('form-control');
-        // map: folder name => voice name
         for (let d in WordsEngine.dicts) {
-            select.append($("<option></option>").html(WordsEngine.dicts[d].name).val(d));
+            let label = WordsEngine.dicts[d].custom ? '\u2605 ' + WordsEngine.dicts[d].name : WordsEngine.dicts[d].name;
+            select.append($("<option></option>").html(label).val(d));
         }
         return select;
     }
+
+    let manageBtn = $("<button class='btn btn-outline-secondary btn-sm mt-1'></button>")
+        .html(tr('Manage Dictionaries'))
+        .click(function (e) {
+            e.preventDefault();
+            DictManager.open();
+        });
 
     return {
         label: tr('Dictionary'),
@@ -243,7 +250,8 @@ Fields.dictionary = function (setup) {
         input: jqSelectDict().val(setup.dictionary)
             .change(function () {
                 WordsEngine.cacheDict($(this).val());
-            })
+            }),
+        after: manageBtn
     }
 }
 

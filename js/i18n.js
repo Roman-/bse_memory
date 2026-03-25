@@ -353,17 +353,35 @@ Glob.localeMap = {
     "No results": {
         "ru": "Нет результатов",
     },
-    "": {
-        "ru": "",
+    "Manage Dictionaries": {
+        "ru": "Управление словарями",
     },
-    "": {
-        "ru": "",
+    "Add Dictionary": {
+        "ru": "Добавить словарь",
     },
-    "": {
-        "ru": "",
+    "No custom dictionaries": {
+        "ru": "Нет пользовательских словарей",
     },
-    "": {
-        "ru": "",
+    "Reset to Defaults": {
+        "ru": "Сбросить все",
+    },
+    "Delete dictionary": {
+        "ru": "Удалить словарь",
+    },
+    "Delete all custom dictionaries?": {
+        "ru": "Удалить все пользовательские словари?",
+    },
+    "Dictionary name": {
+        "ru": "Название словаря",
+    },
+    "Enter words, one per line": {
+        "ru": "Введите слова, по одному на строку",
+    },
+    "Words (one per line)": {
+        "ru": "Слова (по одному на строку)",
+    },
+    "Language": {
+        "ru": "Язык",
     },
 };
 

@@ -66,6 +66,49 @@ WordsEngine.dicts = {
     },
 };
 
+WordsEngine.CUSTOM_PREFIX = 'custom-';
+
+WordsEngine.loadCustomDicts = function() {
+    let raw = loadLocal('CustomDicts', '{}');
+    let customDicts = JSON.parse(raw);
+    for (let key in customDicts) {
+        WordsEngine.dicts[key] = {
+            name: customDicts[key].name,
+            descr: '',
+            lang: customDicts[key].lang,
+            custom: true
+        };
+    }
+};
+
+WordsEngine.saveCustomDict = function(key, name, lang, wordsText) {
+    // Update in-memory dicts
+    WordsEngine.dicts[key] = { name: name, descr: '', lang: lang, custom: true };
+    // Save word data
+    saveLocal('CustomDict-' + key, wordsText);
+    // Update index
+    let index = JSON.parse(loadLocal('CustomDicts', '{}'));
+    index[key] = { name: name, lang: lang };
+    saveLocal('CustomDicts', JSON.stringify(index));
+};
+
+WordsEngine.deleteCustomDict = function(key) {
+    delete WordsEngine.dicts[key];
+    localStorage.removeItem('CustomDict-' + key);
+    let index = JSON.parse(loadLocal('CustomDicts', '{}'));
+    delete index[key];
+    saveLocal('CustomDicts', JSON.stringify(index));
+};
+
+WordsEngine.resetCustomDicts = function() {
+    let index = JSON.parse(loadLocal('CustomDicts', '{}'));
+    for (let key in index) {
+        delete WordsEngine.dicts[key];
+        localStorage.removeItem('CustomDict-' + key);
+    }
+    localStorage.removeItem('CustomDicts');
+};
+
 WordsEngine.cacheDict = function (dictName) {
     // disable button for a moment
     $("button#startGetReady").attr('disabled', true);
@@ -77,5 +120,10 @@ WordsEngine.cacheDict = function (dictName) {
         $("button#startGetReady").attr('disabled', false);
         onTitleChange(MemoEngine.eventTitle('words'));
     }
-    jQuery.get("data/dicts/" + dictName + ".txt", onDictLoaded);
+    if (WordsEngine.dicts[dictName] && WordsEngine.dicts[dictName].custom) {
+        let data = loadLocal('CustomDict-' + dictName, '');
+        onDictLoaded(data);
+    } else {
+        jQuery.get("data/dicts/" + dictName + ".txt", onDictLoaded);
+    }
 }

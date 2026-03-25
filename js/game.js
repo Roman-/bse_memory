@@ -59,7 +59,11 @@ function Game() {
                 $("<div class='form-group row'></div>").append(
                     $("<label for='"+id+"' class='col-sm-3 col-form-label text-left'></label>")
                         .html(field.label).prop('title', field.title)
-                  , $("<div class='col-sm-3'></div>").append(field.input.addClass('form-control')).prop('title', field.title)
+                  , (function() {
+                    let col = $("<div class='col-sm-3'></div>").append(field.input.addClass('form-control')).prop('title', field.title);
+                    if (field.after) col.append(field.after);
+                    return col;
+                })()
                 )
             );
         });

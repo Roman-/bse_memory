@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    WordsEngine.loadCustomDicts();
     loMain();
 
     initMenu();

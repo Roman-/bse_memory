@@ -16,6 +16,7 @@ This software is designed as a free online memory sports competition simulator, 
 - **Customizable:** Tailor the settings to your preferences, from concentration time to recall input method.
 - **Minimalistic:** A clean, distraction-free interface that includes a night mode for comfortable practice sessions.
 - **Fun:** Engage with unique events like Color or explore new Emoji dictionaries in the Words event for an entertaining learning experience.
+- **Custom Dictionaries:** Create your own word lists for the Words event, saved locally in your browser.
 
 ## Acknowledgements
 
