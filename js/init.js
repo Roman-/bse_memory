@@ -1,8 +1,5 @@
 $(document).ready(function() {
-    if (Glob.currentLocale == '')
-        loLanguage();
-    else
-        loMain();
+    loMain();
 
     initMenu();
     bindHotKeys();

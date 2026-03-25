@@ -27,7 +27,7 @@ function loMain() {
 
 function jqLanguage() {
     engDiv = $("<div></div>").addClass('card text-center clickable').append(
-            $("<img></img>").attr('alt', 'russian').attr('src', 'img/flag-en.jpg').addClass("card-img-top"),
+            // $("<img></img>").attr('alt', 'russian').attr('src', 'img/flag-en.jpg').addClass("card-img-top"),
             $("<div></div>").addClass("card-body").append($("<p></p>").addClass("card-text").html("English"))
             ).click(function () {
                 Glob.currentLocale = 'en';
@@ -35,7 +35,7 @@ function jqLanguage() {
                 loMain();
             });
     rusDiv = $("<div></div>").addClass('card text-center clickable').append(
-            $("<img></img>").attr('alt', 'russian').attr('src', 'img/flag-ru.jpg').addClass("card-img-top"),
+            // $("<img></img>").attr('alt', 'russian').attr('src', 'img/flag-ru.jpg').addClass("card-img-top"),
             $("<div></div>").addClass("card-body").append($("<p></p>").addClass("card-text").html("Русский"))
             ).click(function () {
                 Glob.currentLocale = 'ru';
